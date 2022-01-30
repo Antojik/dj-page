@@ -7,6 +7,7 @@ import FirstNewsPic from '../images/FirstNewsPic.png';
 import SecondNewsPic from '../images/SecondNewsPic.png';
 import ThirdNewsPic from '../images/ThirdNewsPic.png';
 
+
 const StyledHeader = styled.div`
   z-index: 1;
   margin: 0 auto;
@@ -87,7 +88,7 @@ const News = styled.div`
   justify-content: space-between;
 
   #second-cont{
-    border-radius: 20px 0px;
+    border-radius: 20px 0px 20px 0px;
     opacity: 70%;
     width: 350px;
     height: 90px;

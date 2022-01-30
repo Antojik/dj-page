@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import './App.css';
 import Header from './header/Header';
 import HeaderImage from './images/HeaderImage.png';
+import AboutSection from './about_section/AboutSection';
 import NewsSection from './news_section/NewsSection';
 
 const ImageContainer = styled.div`
@@ -16,6 +17,7 @@ function App() {
         <img src={HeaderImage} alt="HeaderImg" />
       </ImageContainer>
       <Header/>
+      <AboutSection/>
       <NewsSection/>
     </div>
   );
