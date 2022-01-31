@@ -4,6 +4,7 @@ import Header from './header/Header';
 import HeaderImage from './images/HeaderImage.png';
 import AboutSection from './about_section/AboutSection';
 import NewsSection from './news_section/NewsSection';
+import MusicSection from './music_section/MusicSection';
 
 const ImageContainer = styled.div`
   z-index: -1;
@@ -19,6 +20,7 @@ function App() {
       <Header/>
       <AboutSection/>
       <NewsSection/>
+      <MusicSection/>
     </div>
   );
 }
