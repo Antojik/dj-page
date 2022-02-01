@@ -2,16 +2,19 @@ import styled from 'styled-components';
 import '../App.css';
 import CirclePic from '../images/CirclePic.png';
 import Columns from '../images/musicСolumns.png'; 
+import PlayIco from '../images/PlayIco.png';
+import Slider from '@mui/material/Slider';
 
 
 const ThirdSection = styled.div`
   margin: 0 auto;
   width: 1110px;
   margin-top: 301px;
+  display: flex;
 `
 
 const LeftSide = styled.div`
-  width: 50%;
+  width: 55%;
   .firstEllipse{
     position: absolute;
     border-radius: 50%;
@@ -35,18 +38,26 @@ const LeftSide = styled.div`
 `
 
 const RightSide = styled.div`
-  width: 50%;
+  width: 45%;
 `
 
 const MusicSectionHeadline = styled.div`
   display: flex;
+  align-items: center;
   p{
+    margin-left: 30px;
     font-weight: bold;
     font-size: 48px;
     line-height: 72px;  
     color: #FFFFFF;
   }
 `
+
+const Player = styled.div`
+  margin-top: 81px;
+  display: flex;
+`
+
 
 const MusicSection = () =>{
   return (
@@ -60,9 +71,13 @@ const MusicSection = () =>{
       </LeftSide>
       <RightSide>
         <MusicSectionHeadline>
-          <img src={Columns} alt='HeadlinePic'/>
+          <img  src={Columns} alt='HeadlinePic'/>
           <p>Last tracks</p>
         </MusicSectionHeadline>
+        <Player>
+          <img src={PlayIco} alt='PlayIco'/>
+            <Slider />
+        </Player>
       </RightSide>
     </ThirdSection>
   );
