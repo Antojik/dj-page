@@ -6,10 +6,15 @@ import AboutSection from './about_section/AboutSection';
 import NewsSection from './news_section/NewsSection';
 import MusicSection from './music_section/MusicSection';
 import MediaSection from './media_section/MediaSection';
+import ToursSection from './tours_section/ToursSection';
 
 const ImageContainer = styled.div`
-  z-index: -1;
-  position: absolute;
+  img{  
+    z-index: -1;
+    position: absolute;
+    max-width: 100%;
+    min-width: 100%;
+}
 `
 
 function App() {
@@ -23,6 +28,7 @@ function App() {
       <NewsSection/>
       <MusicSection/>
       <MediaSection/>
+      <ToursSection/>
     </div>
   );
 }

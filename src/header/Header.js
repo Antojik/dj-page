@@ -3,9 +3,8 @@ import '../App.css';
 import Logo from '../images/Logo.png';
 import LogoName from '../images/LogoName.png';
 import PlayIco from '../images/PlayIco.png';
-import FirstNewsPic from '../images/FirstNewsPic.png';
-import SecondNewsPic from '../images/SecondNewsPic.png';
-import ThirdNewsPic from '../images/ThirdNewsPic.png';
+import Slider from '@mui/material/Slider';
+import data from './data.js';
 
 
 const StyledHeader = styled.div`
@@ -46,7 +45,7 @@ const Nav = styled.div`
 `
 
 const SecondLine = styled.p`
-  margin-top: 350px;
+  margin-top: 330px;
   display: flex;
   color: white;
   font-weight: bold;
@@ -55,7 +54,6 @@ const SecondLine = styled.p`
 `
 
 const ThirdLine = styled.p`
-  display: flex;
   font-weight: bold;
   font-size: 100px;
   line-height: 150px;
@@ -67,64 +65,62 @@ const ThirdLine = styled.p`
 const Player = styled.div`
   margin-top: 40px; 
   display: flex;
-  #horizontal-line{
+  align-items: center;
+  .sliderContainer{
     width: 887px;
-    height: 0px;
-    margin: 10px 0px 0px 40px;
-    border: 2px solid white;
+    margin: 5px 0px 0px 45px;
   }
-  #vertical-line{
-    position: relative;
-    right: 800px;
-    border: 2px solid #7A66CC;
+  p{
+    margin-left: 47px;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+  }
+`
+
+const StyledSlider = styled(Slider)`
+  .MuiSlider-thumb{
+    box-shadow: 0px 0px 0px 0px !important;
+    width: 2px;
+    height: 20px;
+    color: #7A66CC;
+  }
+  .MuiSlider-track{
+    height: 1px;
+    color:#7A66CC;
+  }
+  .MuiSlider-rail{
+    height: 2px;
+    background-color: white;
+    opacity: 1;
   }
 `
 
 const News = styled.div`  
   position: relative;
   height: 300px;
-  margin-top: 140px;
+  margin-top: 120px;
   display: flex;
   justify-content: space-between;
 
   #second-cont{
     border-radius: 20px 0px 20px 0px;
-    opacity: 70%;
     width: 350px;
     height: 90px;
     position: absolute;
     bottom: 0;
-    background-color: #7A66CC;
+    background-color: rgba(122, 102, 204, 0.7);
+    p{
+      margin: 21px 0 0 20px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #fff;
+      opacity: 1 !important;
+    }
   }
-  #first-p{ 
-    position: absolute;
-    bottom: 21px;
-    left: 20px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #fff;
-  }
-  #second-p{
-    position: absolute;
-    bottom: 21px;
-    left: 410px;
-    width: 310px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #fff;
-  }
-  #third-p{
-    position: absolute;
-    bottom: 21px;
-    left: 790px;
-    width: 310px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #fff;
-  }
+  
 `
 
 const Header = () => {
@@ -148,25 +144,22 @@ const Header = () => {
       <ThirdLine>War For Love</ThirdLine>
       <Player>
         <img src={PlayIco} alt='PlayIco' />
-        <div id="horizontal-line"></div>
-        <div id="vertical-line"></div>
+        <div className='sliderContainer'>
+          <StyledSlider />
+        </div>
+        <p>00:22-02:54</p>
       </Player>
       <News>
-        <div>
-          <img src={FirstNewsPic} alt='first' />
-          <div id="second-cont"></div>
-          <p id='first-p'>Working on my upcoming full-lenth<br/>album that`s releasing later this year.</p>
-        </div>
-        <div>
-          <img src={SecondNewsPic} alt='second' />
-          <div id="second-cont"></div>
-          <p id='second-p'>Halloween vibes. <br /> Listen my new track!</p>
-        </div>
-        <div>
-          <img src={ThirdNewsPic} alt='third' />
-          <div id="second-cont"></div>
-          <p id='third-p'>WarForLove is OUT NOW!! <br /> Stream it here!</p>
-        </div>
+        {data.map((box) => {
+          return (
+            <div>
+              <img src={box.image} alt='Picture' />
+              <div id="second-cont">
+                <p >{box.info1}<br />{box.info2}</p>
+              </div>
+            </div>
+          );
+        })}
       </News>
     </StyledHeader>
   );
