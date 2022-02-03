@@ -7,6 +7,7 @@ import NewsSection from './news_section/NewsSection';
 import MusicSection from './music_section/MusicSection';
 import MediaSection from './media_section/MediaSection';
 import ToursSection from './tours_section/ToursSection';
+import ContactSection from './contacts_section/ContactsSection';
 
 const ImageContainer = styled.div`
   img{  
@@ -29,6 +30,7 @@ function App() {
       <MusicSection/>
       <MediaSection/>
       <ToursSection/>
+      <ContactSection/>
     </div>
   );
 }
