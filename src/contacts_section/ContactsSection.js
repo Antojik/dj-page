@@ -85,13 +85,13 @@ const ContactSection = () => {
       <IconsContainer>
         <img src={Apple} alt='Apple' />
         <img src={Spotify} alt='Spotify' />
-        <img src={Inst} alt='Inst' />
+        <img src={Inst} alt='Inst'/>
         <img src={Youtube} alt='Youtube' />
         <img src={Twitter} alt='Twtitter' />
         <img src={Facebook} alt='Facebook' />
       </IconsContainer>
       <Footer>
-        <p>©  2020 DJ bright lights.</p>
+        <p>© 2020 DJ bright lights.</p>
       </Footer>
     </SixthSection>
   );

@@ -9,6 +9,7 @@ import ArrowBoxRight from '../images/ArrowBoxRight.svg';
 const FifthSection = styled.div`
   margin: 0 auto;
   width: 1110px;
+  overflow-x: hidden;
   margin-top: 180px;
   .main{
     display: flex;
@@ -28,9 +29,20 @@ const SecondStyledImage = styled.img`
   margin-top: 210px;
 `
 
+const Slider = () => {
+  let offset = 0;
+  const sliderLine = document.querySelector("#fifthSection");
+
+  document.querySelector('#slider-next').addEventListener('click', () => {
+    offset = offset + 350;
+    sliderLine.style.left = offset + 'px';
+  });
+}
+
+
 const ToursSection = () => {
   return (
-    <FifthSection>
+    <FifthSection id='fifthSection'>
       <div className='main'>
         <FirstStyledImage src={ArrowBox} />
         {data.map((card, index) => {
@@ -38,7 +50,7 @@ const ToursSection = () => {
             <Card data={card} />
           );
         })}
-        <SecondStyledImage src={ArrowBoxRight} />
+        <SecondStyledImage onClick={() => Slider()} id='slider-next' src={ArrowBoxRight} />
       </div>
     </FifthSection>
   );

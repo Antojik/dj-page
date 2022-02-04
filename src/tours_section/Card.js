@@ -7,6 +7,8 @@ const StyledCard = styled.div`
     font-size: 18px;
     line-height: 27px;
     color: white;
+    position: relative;
+    
 }
 .headline{
   margin-left: 25px;
